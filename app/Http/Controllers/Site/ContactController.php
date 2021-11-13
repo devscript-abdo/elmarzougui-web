@@ -20,7 +20,7 @@ class ContactController extends Controller
     {
         $data = $request->only(['name','email','phone','content']);
 
-        dd($data);
+       // dd($data);
         $email = setting('contact.email_reciver') ?? 'contact@' . request()->getHost();
 
         if ($email) {

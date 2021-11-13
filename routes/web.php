@@ -34,8 +34,8 @@ Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.single')
 Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
 Route::get('/portfolio/{slug}', [PortfolioController::class, 'show'])->name('portfolio.single');
 
-Route::get('/contact-us', [ContactController::class, 'index'])->name('contact');
-Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.post');
+Route::get('/contact-us', [ContactController::class, 'index'])->name('contact')->middleware('doNotCacheResponse');
+Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.post')->middleware('doNotCacheResponse');
 
 Route::get('/plans', [PlanController::class, 'index'])->name('plans');
 

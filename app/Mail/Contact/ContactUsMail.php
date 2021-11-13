@@ -11,14 +11,16 @@ class ContactUsMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+
+    private $data;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($data)
     {
-        //
+        $this->data = $data;
     }
 
     /**
@@ -28,6 +30,10 @@ class ContactUsMail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+
+        return $this->from('site@' . request()->getHost(), 'mingo.ma')
+            ->subject('Nouveau message depuis le site web')
+            ->view('mail.contact-us-mail')
+            ->with('data', (object)$this->data);
     }
 }

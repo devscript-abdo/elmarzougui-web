@@ -8,6 +8,7 @@
                 <p class="lead fw-normal text-muted mb-0">We'd love to hear from you</p>
             </div>
             <div class="row gx-5 justify-content-center">
+                
                 <div class="col-lg-8 col-xl-6">
                     <form action="{{route('contact')}}" method="post" data-sb-form-api-token="API_TOKEN">
                         <!-- Name input-->
