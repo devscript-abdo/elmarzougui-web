@@ -23,6 +23,10 @@ return [
     |
     */
     'skip' => [
+
+        'theadmin/',
+        'theadmin/*',
+
         '*.xml',
         '*.less',
         '*.pdf',

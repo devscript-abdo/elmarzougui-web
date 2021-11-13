@@ -10,7 +10,7 @@
             <div class="row gx-5 justify-content-center">
                 
                 <div class="col-lg-8 col-xl-6">
-                    <form action="{{route('contact')}}" method="post" data-sb-form-api-token="API_TOKEN">
+                    <form action="{{route('contact')}}" method="post">
                         <!-- Name input-->
                         <div class="form-floating mb-3">
                             <input class="form-control @error('name') is-invalid @enderror" id="name" name="name" type="text" value="{{old('name')}}" />

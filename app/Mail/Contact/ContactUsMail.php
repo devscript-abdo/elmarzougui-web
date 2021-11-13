@@ -31,7 +31,7 @@ class ContactUsMail extends Mailable
     public function build()
     {
 
-        return $this->from('site@' . request()->getHost(), 'mingo.ma')
+        return $this->from('site@' . request()->getHost(), 'elmarzougui-web.com')
             ->subject('Nouveau message depuis le site web')
             ->view('mail.contact-us-mail')
             ->with('data', (object)$this->data);
