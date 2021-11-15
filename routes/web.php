@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Developer\DevloperController;
 use App\Http\Controllers\Site\BlogController;
 use App\Http\Controllers\Site\ContactController;
 use App\Http\Controllers\Site\FaqController;
@@ -34,9 +35,15 @@ Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.p
 
 Route::get('/plans', [PlanController::class, 'index'])->name('plans');
 
-Route::get('faqs',[FaqController::class,'index'])->name('faqs');
+Route::get('faqs', [FaqController::class, 'index'])->name('faqs');
 
-Route::group(['prefix' => 'admin'], function () {
 
+
+
+Route::group(['prefix' => 'theadmin', 'middleware' => 'doNotCacheResponse'], function () {
     Voyager::routes();
+
+    Route::prefix('dev', function () {
+        Route::get('/clear', [DevloperController::class, 'clearCache']);
+    });
 });
