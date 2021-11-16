@@ -12,6 +12,10 @@ class RepositoryServiceProvider extends ServiceProvider
             'abstract' => "App\Repositories\Post\PostInterface",
             'concrete' => "App\Repositories\Post\PostRepository"
         ],
+        [
+            'abstract' => "App\Repositories\Client\ClientInterface",
+            'concrete' => "App\Repositories\Client\ClientRepository"
+        ],
     ];
     /**
      * Register services.
